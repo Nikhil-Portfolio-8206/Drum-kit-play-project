@@ -6,7 +6,9 @@ const jButton=document.querySelectorAll(".set .j")[0];
 const kButton=document.querySelectorAll(".set .k")[0];
 const lButton=document.querySelectorAll(".set .l")[0];
 
+// for(i=0;i<document.querySelectorAll(".sound").length;i++){
 
+// }
 const wSound=document.querySelectorAll(".sound")[0];
 const aSound=document.querySelectorAll(".sound")[1];
 const sSound=document.querySelectorAll(".sound")[2];
@@ -17,7 +19,9 @@ const lSound=document.querySelectorAll(".sound")[6];
 
 wButton.addEventListener("click",  () => {
   wSound.play();
+  wButton.style.color="white";
 });
+
 aButton.addEventListener("click",  () => {
   aSound.play();
 });
