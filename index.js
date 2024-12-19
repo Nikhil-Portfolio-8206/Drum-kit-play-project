@@ -10,7 +10,8 @@ for (var i = 0; i < numberOfButton; i++) {
 
 //function to make sound once button is pressed
 function makeSound(matchButton){
-  switch(matchButton){
+  const key = matchButton.toLowerCase();
+  switch(key){
     case "w":
       var wSound = new Audio("sounds/tom-1.mp3");
       wSound.play();
@@ -49,7 +50,6 @@ function makeSound(matchButton){
   }
 }
 
-
 //function for the keydown
 document.addEventListener("keydown", function(keyboard) {
 
@@ -65,5 +65,5 @@ function buttonAnimation(buttonPress){
   setTimeout(function() {
     addClass.classList.remove("pressed");
   }, 100);
-  
 }
+
