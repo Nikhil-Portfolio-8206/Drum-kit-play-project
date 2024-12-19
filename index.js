@@ -1,42 +1,52 @@
-const wButton=document.querySelectorAll(".set .w")[0];
-const aButton=document.querySelectorAll(".set .a")[0];
-const sButton=document.querySelectorAll(".set .s")[0];
-const dButton=document.querySelectorAll(".set .d")[0];
-const jButton=document.querySelectorAll(".set .j")[0];
-const kButton=document.querySelectorAll(".set .k")[0];
-const lButton=document.querySelectorAll(".set .l")[0];
+var numberOfButton = document.querySelectorAll(".drum").length;
+for (var i = 0; i < numberOfButton; i++) {
+  document.querySelectorAll(".drum")[i].addEventListener("click", function() {
+    var buttonInnerHTML = this.innerHTML;
+    makeSound(buttonInnerHTML);
+  });
+}
 
-// for(i=0;i<document.querySelectorAll(".sound").length;i++){
+function makeSound(matchButton){
+  switch(matchButton){
+    case "w":
+      var wSound = new Audio("sounds/tom-1.mp3");
+      wSound.play();
+      break;
 
-// }
-const wSound=document.querySelectorAll(".sound")[0];
-const aSound=document.querySelectorAll(".sound")[1];
-const sSound=document.querySelectorAll(".sound")[2];
-const dSound=document.querySelectorAll(".sound")[3];
-const jSound=document.querySelectorAll(".sound")[4];
-const kSound=document.querySelectorAll(".sound")[5];
-const lSound=document.querySelectorAll(".sound")[6];
+    case "a":
+      var aSound = new Audio("sounds/tom-2.mp3");
+      aSound.play();
+      break;
 
-wButton.addEventListener("click",  () => {
-  wSound.play();
-  wButton.style.color="white";
-});
+    case "s":
+      var sSound = new Audio('sounds/tom-3.mp3');
+      sSound.play();
+      break;
 
-aButton.addEventListener("click",  () => {
-  aSound.play();
-});
-sButton.addEventListener("click",  () => {
-  sSound.play();
-});
-dButton.addEventListener("click",  () => {
-  dSound.play();
-});
-jButton.addEventListener("click",  () => {
-  jSound.play();
-});
-kButton.addEventListener("click",  () => {
-  kSound.play();
-});
-lButton.addEventListener("click",  () => {
-  lSound.play();
-});
+    case "d":
+      var dSound = new Audio('sounds/tom-4.mp3');
+      dSound.play();
+      break;
+
+    case "j":
+      var jSound = new Audio('sounds/snare.mp3');
+      jSound.play();
+      break;
+
+    case "k":
+      var kSound = new Audio('sounds/crash.mp3');
+      kSound.play();
+      break;
+
+    case "l":
+      var lSound = new Audio('sounds/kick-bass.mp3');
+      lSound.play();
+      break;
+    default: console.log(matchButton);
+  }
+}
+
+
+
+
+
