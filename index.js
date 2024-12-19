@@ -1,11 +1,14 @@
+//select the button using mouse
 var numberOfButton = document.querySelectorAll(".drum").length;
 for (var i = 0; i < numberOfButton; i++) {
   document.querySelectorAll(".drum")[i].addEventListener("click", function() {
     var buttonInnerHTML = this.innerHTML;
     makeSound(buttonInnerHTML);
+    buttonAnimation(buttonInnerHTML);
   });
 }
 
+//function to make sound once button is pressed
 function makeSound(matchButton){
   switch(matchButton){
     case "w":
@@ -47,6 +50,20 @@ function makeSound(matchButton){
 }
 
 
+//function for the keydown
+document.addEventListener("keydown", function(keyboard) {
 
+  makeSound(keyboard.key);
+  buttonAnimation(keyboard.key);
 
+});
 
+// Button animation
+function buttonAnimation(buttonPress){
+  var addClass=document.querySelector("."+buttonPress);
+  addClass.classList.add("pressed");
+  setTimeout(function() {
+    addClass.classList.remove("pressed");
+  }, 100);
+  
+}
